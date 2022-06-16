@@ -3,8 +3,13 @@ import React from 'react'
 const Main = () => {
   const welcome = "Hello there"
 
+  const styles = {
+    color: 'lime',
+    fontSize: '5em'
+  }
+
   return (
-    <h1 style={{color: 'lime', fontSize: '5em'}}>{welcome}</h1>
+    <h1 style={styles}>{welcome}</h1>
   );
 }
 
