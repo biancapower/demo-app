@@ -4,7 +4,7 @@ const Comment = (props) => {
   return (
     <div className="comment">
       <a href="/" className="avatar">
-        <img src="https://i.pravatar.cc/60" alt="avatar" />
+        <img src={props.avatar} alt="avatar" />
       </a>
       <div className="content">
         <a href="/" className="author">{props.author}</a>
