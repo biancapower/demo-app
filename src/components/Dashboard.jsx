@@ -13,13 +13,31 @@ class Dashboard extends Component{
 		)
 	}
 
+	isNorth(){
+		const {latitude} = this.state
+
+		return latitude > 0
+	}
+
+	getClockIcon(){
+		if(this.isNorth()){
+			return "summer.png"
+		}
+		return "winter.png"
+	}
+
 	render (){
 		const {latitude, errorMessage} = this.state
 
 		return (
 			<div>
 				<h3>{latitude}</h3>
-				{errorMessage || <Clock date={new Date()} />}
+				{errorMessage || 
+					<Clock 
+						date={new Date()}
+						icon={latitude ? this.getClockIcon() : null}
+					/>
+				}
 			</div>
 		)
 	}
