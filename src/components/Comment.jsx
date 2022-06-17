@@ -11,8 +11,8 @@ const Comment = (props) => {
         <img src={avatar} alt="avatar" />
       </a>
       <div className="content">
-        <a href="/" className="author">{data[0].username}</a>
-        {/* <p className="date">{data[0].birthdate}</p> */}
+        <a href="/" className="author">{data[0].username}</a> {/* TODO: loop through  */}
+        {/* <p className="date">{data[0].birthdate}</p> */} {/* FIXME: can't use dates here? */}
         <p className="text">{props.text}</p>
       </div>
     </div>
