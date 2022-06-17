@@ -6,7 +6,8 @@ import Sometimes from './Sometimes';
 const App = () => {
   const loading = false
 
-  return loading ? <h4>Loading...</h4> : (
+  // return loading ? <h4>Loading...</h4> : (
+  return !loading && (
     <div>
       <Nav />
       <Main />
