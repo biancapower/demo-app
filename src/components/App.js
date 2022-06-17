@@ -4,7 +4,9 @@ import Main from './Main'
 import Sometimes from './Sometimes';
 
 const App = () => {
-  return (
+  const loading = false
+
+  return loading ? <h4>Loading...</h4> : (
     <div>
       <Nav />
       <Main />

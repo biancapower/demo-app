@@ -1,6 +1,7 @@
 import React from "react"
 
 const Comment = (props) => {
+  // ?u= allows passing a unique identifier to force unique images
   const avatar = "https://i.pravatar.cc/60?u=" + Math.random()
 
   return (
