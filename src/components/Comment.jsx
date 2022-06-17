@@ -1,4 +1,5 @@
 import React from "react"
+import { data } from '../data/users'
 
 const Comment = (props) => {
   // ?u= allows passing a unique identifier to force unique images
@@ -10,8 +11,8 @@ const Comment = (props) => {
         <img src={avatar} alt="avatar" />
       </a>
       <div className="content">
-        <a href="/" className="author">{props.author}</a>
-        <p className="date">{props.date}</p>
+        <a href="/" className="author">{data[0].username}</a>
+        {/* <p className="date">{data[0].birthdate}</p> */}
         <p className="text">{props.text}</p>
       </div>
     </div>
