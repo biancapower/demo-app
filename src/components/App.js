@@ -4,6 +4,7 @@ import Main from './Main'
 import Sometimes from './Sometimes';
 import Dashboard from './Dashboard';
 import Form from './Form';
+import Projects from './Projects';
 
 const App = () => {
   const loading = false
@@ -13,6 +14,9 @@ const App = () => {
     <div>
       <Nav />
       <Dashboard />
+      <hr/>
+      <Projects />
+      <hr/>
       <Form />
       <Main />
 
