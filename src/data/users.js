@@ -1,6 +1,17 @@
 import { faker } from '@faker-js/faker';
 
-export const data = [];
+export const data = [
+  // add one user for testing purposes
+  {
+    userId: faker.datatype.uuid(),
+    username: "test",
+    email: "test@test.com",
+    avatar: faker.image.avatar(),
+    password: "123456",
+    birthdate: faker.date.birthdate(),
+    registeredAt: faker.date.past()
+  }
+];
 
 // const Main = () => {
 // export function createRandomUser() {

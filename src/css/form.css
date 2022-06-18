@@ -1,0 +1,17 @@
+.login-form {
+	display: flex;
+	flex-direction: column;
+	padding: 2em;
+	background-color: blue;
+	color: antiquewhite;
+}
+
+.login-form input {
+	margin: 1em 0;
+}
+
+.login-form input[type="submit"] {
+	background-color: purple;
+	color: antiquewhite;
+	width: 100px;
+}

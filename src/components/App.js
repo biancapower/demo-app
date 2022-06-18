@@ -3,6 +3,7 @@ import Nav from './Nav'
 import Main from './Main'
 import Sometimes from './Sometimes';
 import Dashboard from './Dashboard';
+import Form from './Form';
 
 const App = () => {
   const loading = false
@@ -12,6 +13,7 @@ const App = () => {
     <div>
       <Nav />
       <Dashboard />
+      <Form />
       <Main />
 
       <h1>If you're happy...</h1>
