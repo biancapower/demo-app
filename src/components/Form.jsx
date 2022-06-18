@@ -7,7 +7,9 @@ class Form extends Component{
 		super(props)
 		this.state = {
 			errorMessage: "",
-			username: "🤔"
+			username: "🤔",
+			email: "",
+			password: ""
 		}
 	}
 
@@ -26,16 +28,12 @@ class Form extends Component{
 		// event.target is the form
 		// console.log(event.target.children)
 		
-		const formElements = event.target.children
-		const emailInput = formElements[1]
-		const passwordInput = formElements[3]
-		const emailValue = emailInput.value
-		const passwordValue = passwordInput.value
+		const { email, password } = this.state
 
-		const foundUser = data.find((user) => user.email === emailValue)
+		const foundUser = data.find((user) => user.email === email)
 
 		if (foundUser) {
-			if (passwordValue === foundUser.password) {
+			if (password === foundUser.password) {
 				this.setState({
 					username: foundUser.username
 				})
@@ -45,6 +43,14 @@ class Form extends Component{
 				errorMessage: "No matches found"
 			})
 		}
+	}
+
+	onInputChange = (event) => {
+		this.setState({
+			// sets state for both email and password
+			[event.target.id]: event.target.value
+		})
+		console.log(event.target.value)
 	}
 
 	render(){
@@ -59,10 +65,12 @@ class Form extends Component{
 				<h1>Reveal your username</h1>
 				<form className='login-form' onSubmit={this.onFormSubmit}>
 					<label htmlFor="email">Email:</label>
-					<input type="email" name="email" id="email" />
+					<input type="email" name="email" id="email"
+						value={this.state.email} onChange={this.onInputChange} />
 					
 					<label htmlFor="password">Password:</label>
-					<input type="password" name="password" id="password" />
+					<input type="password" name="password" id="password"
+						value={this.state.password} onChange={this.onInputChange} />
 					
 					<input type="submit" value="Submit me!" />
 				</form>
