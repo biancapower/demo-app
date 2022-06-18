@@ -54,11 +54,13 @@ class Form extends Component{
 	}
 
 	render(){
+		const { email, password, username, errorMessage } = this.state
+
 		return(
 			<div>
-				{this.state.errorMessage && <p>{this.state.errorMessage}</p>}
-				{this.state.username ? 
-					<p>Your username is: {this.state.username}</p> 
+				{errorMessage && <p>{errorMessage}</p>}
+				{username ? 
+					<p>Your username is: {username}</p> 
 					: 
 					<p>Your login details are incorrect</p>
 				}
@@ -66,11 +68,11 @@ class Form extends Component{
 				<form className='login-form' onSubmit={this.onFormSubmit}>
 					<label htmlFor="email">Email:</label>
 					<input type="email" name="email" id="email"
-						value={this.state.email} onChange={this.onInputChange} />
+						value={email} onChange={this.onInputChange} />
 					
 					<label htmlFor="password">Password:</label>
 					<input type="password" name="password" id="password"
-						value={this.state.password} onChange={this.onInputChange} />
+						value={password} onChange={this.onInputChange} />
 					
 					<input type="submit" value="Submit me!" />
 				</form>
