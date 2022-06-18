@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import ProjectForm from "./ProjectForm";
 import ProjectList from "./ProjectList"
 
 const Projects = () => {
@@ -22,6 +23,7 @@ const Projects = () => {
 	return(
 		<div>
 			<h1>Projects</h1>
+			<ProjectForm />
 			<ProjectList projects={projects} />
 		</div>
 	)

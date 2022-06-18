@@ -65,7 +65,7 @@ class Form extends Component{
 					<p>Your login details are incorrect</p>
 				}
 				<h1>Reveal your username</h1>
-				<form className='login-form' onSubmit={this.onFormSubmit}>
+				<form className='form' onSubmit={this.onFormSubmit}>
 					<label htmlFor="email">Email:</label>
 					<input type="email" name="email" id="email"
 						value={email} onChange={this.onInputChange} />

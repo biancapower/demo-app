@@ -1,4 +1,4 @@
-.login-form {
+.form {
 	display: flex;
 	flex-direction: column;
 	padding: 2em;
@@ -6,12 +6,12 @@
 	color: antiquewhite;
 }
 
-.login-form input {
+.form input {
 	margin: 1em 0;
 }
 
-.login-form input[type="submit"] {
+.form input[type="submit"] {
 	background-color: purple;
 	color: antiquewhite;
-	width: 100px;
+	width: 200px;
 }
