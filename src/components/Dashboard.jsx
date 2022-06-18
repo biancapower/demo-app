@@ -7,7 +7,7 @@ class Dashboard extends Component{
 		// define a state
 		this.state = {latitude: null, errorMessage: '', date: new Date()}
 
-		console.log( "1. constructor runs first")
+		// console.log( "1. constructor runs first")
 	}
 
 	isHot(){
@@ -32,7 +32,7 @@ class Dashboard extends Component{
 	}
 
 	componentDidMount(){
-		console.log( "3. componentDidMount runs *after first render*")
+		// console.log( "3. componentDidMount runs *after first render*")
 
 		window.navigator.geolocation.getCurrentPosition(
 			position => this.setState({latitude: position.coords.latitude}),
@@ -41,19 +41,19 @@ class Dashboard extends Component{
 	}
 
 	componentDidUpdate(prevState){
-		console.log( "4. componentDidUpdate runs *after susequent renders*, not on the first render")
+		// console.log( "4. componentDidUpdate runs *after susequent renders*, not on the first render")
 		if(prevState.date !== this.state.date){
 			this.timerId = setInterval(() =>  this.tick() , 1000)
 		}
 	}
 
 	componentWillUnmount(){
-		console.log( "5. componentWillUnmount")
+		// console.log( "5. componentWillUnmount")
 		clearInterval(this.timerId)
 	}
 
 	render (){
-		console.log( "2. render runs second")
+		// console.log( "2. render runs second")
 		const {latitude, errorMessage, date} = this.state
 		
 		return (
