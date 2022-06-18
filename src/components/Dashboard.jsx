@@ -5,7 +5,7 @@ class Dashboard extends Component{
 	constructor(props){
 		super(props)
 		// define a state
-		this.state = {latitude: null, errorMessage: ''}
+		this.state = {latitude: null, errorMessage: '', today: new Date()}
 
 		window.navigator.geolocation.getCurrentPosition(
 			position => this.setState({latitude: position.coords.latitude}),
@@ -27,14 +27,15 @@ class Dashboard extends Component{
 	}
 
 	render (){
-		const {latitude, errorMessage} = this.state
-
+		const {latitude, errorMessage, today} = this.state
+		
 		return (
 			<div>
-				<h3>{latitude}</h3>
+				<h3>{today.toLocaleString('default', { month: 'long' })}</h3>
+				<h4>Latitude: {latitude}</h4>
 				{errorMessage || 
 					<Clock 
-						date={new Date()}
+						date={today}
 						icon={latitude ? this.getClockIcon() : null}
 					/>
 				}
