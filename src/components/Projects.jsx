@@ -1,17 +1,22 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useReducer} from "react";
 import ProjectForm from "./ProjectForm";
 import ProjectList from "./ProjectList"
+import reducer from "../utils/reducer";
 
 const Projects = () => {
-	const initialProjects = []
-
-	const addProject = (project) => {
-		// add project to start of list so it displays first
-		// then add in a copy of existing projects (using spread operator)
-		setProjects([project, ...projects])
+	const initialState = {
+		projects: []
 	}
 
-	const [projects, setProjects] = useState(initialProjects)
+	const addProject = (project) => {
+		dispatch({
+			type: 'addProject',
+			data: project
+		})
+	}
+
+	const [store, dispatch] = useReducer(reducer, initialState)
+	const {projects} = store
 
 	useEffect(() => {
 		fetch('data/projects.json',{
@@ -21,8 +26,10 @@ const Projects = () => {
 			}
 		}).then((response) => response.json())
 		.then((projects) => {
-			console.log("projects:", projects)
-			setProjects(projects)
+			dispatch({
+				type: 'setProjects',
+				data: projects
+			})
 		})
 		.catch((error) => console.log(error))
 	},[])
