@@ -8,13 +8,6 @@ const Projects = () => {
 		projects: []
 	}
 
-	const addProject = (project) => {
-		dispatch({
-			type: 'addProject',
-			data: project
-		})
-	}
-
 	const [store, dispatch] = useReducer(reducer, initialState)
 	const {projects} = store
 
@@ -33,6 +26,14 @@ const Projects = () => {
 		})
 		.catch((error) => console.log(error))
 	},[])
+
+
+	const addProject = (project) => {
+		dispatch({
+			type: 'addProject',
+			data: project
+		})
+	}
 
 	return(
 		<div>
