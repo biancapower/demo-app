@@ -18,12 +18,18 @@ const Projects = () => {
 		}
 	]
 
+	const addProject = (project) => {
+		// add project to start of list so it displays first
+		// then add in a copy of existing projects (using spread operator)
+		setProjects([project, ...projects])
+	}
+
 	const [projects, setProjects] = useState(initialProjects)
 
 	return(
 		<div>
 			<h1>Projects</h1>
-			<ProjectForm />
+			<ProjectForm addProject={addProject} />
 			<ProjectList projects={projects} />
 		</div>
 	)

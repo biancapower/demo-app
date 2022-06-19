@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 
 const ProjectForm = (props) => {
+	const {addProject} = props
+
 	const initialFormState = {
 		name: "",
 		description: ""
@@ -13,9 +15,19 @@ const ProjectForm = (props) => {
 			[event.target.name]: event.target.value
 		})
 	}
-
+	
+	const onFormSubmit = (event) => {
+		event.preventDefault()
+		addProject(formData)
+		// clear out form fields on submit
+		setFormData({
+			name: "",
+			description: ""
+		})
+	}
+	
 	return (
-		<form className="form">
+		<form className="form" onSubmit={onFormSubmit}>
 			<label htmlFor="name">Name of project:</label>
 			<input type="text" name="name" value={formData.name} onChange={onFormChange} />
 			<label htmlFor="description">Description:</label>
