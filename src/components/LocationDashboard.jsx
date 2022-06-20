@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Clock from './Clock'
 
-class Dashboard extends Component{
+class LocationDashboard extends Component{
 	constructor(props){
 		super(props)
 		// define a state
@@ -71,4 +71,4 @@ class Dashboard extends Component{
 	}
 }
 
-export default Dashboard;
+export default LocationDashboard;

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import "../css/form.css"
 import { data } from '../data/users'
 
-class Form extends Component{
+class UserForm extends Component{
 	constructor(props){
 		super(props)
 		this.state = {
@@ -81,4 +81,4 @@ class Form extends Component{
 	}
 }
 
-export default Form;
+export default UserForm;

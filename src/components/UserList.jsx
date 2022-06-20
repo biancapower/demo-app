@@ -1,7 +1,7 @@
 import React from "react"
 import { data } from '../data/users'
 
-const Comment = (props) => {
+const UserList = (props) => {
   return (
     <div className="comment">
 
@@ -27,4 +27,4 @@ const Comment = (props) => {
   );
 }
 
-export default Comment;
+export default UserList;

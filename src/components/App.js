@@ -1,10 +1,11 @@
 import React from 'react'
 import Nav from './Nav'
-import Main from './Main'
+import Welcome from './Welcome'
 import Sometimes from './Sometimes';
-import Dashboard from './Dashboard';
-import Form from './Form';
+import LocationDashboard from './LocationDashboard';
+import UserForm from './UserForm';
 import Projects from './Projects';
+import UserList from './UserList';
 
 const App = () => {
   const loading = false
@@ -13,15 +14,17 @@ const App = () => {
   return !loading && (
     <div>
       <Nav />
-      <Dashboard />
+      
+      <Welcome />
+      <h1>If you're happy...</h1>
+      <Sometimes happy={true} />
+
+      <LocationDashboard />
       <hr/>
       <Projects />
       <hr/>
-      <Form />
-      <Main />
-
-      <h1>If you're happy...</h1>
-      <Sometimes happy={true} />
+      <UserForm />
+      <UserList text="DummyCorp will transform the aptitude of co-branded versioning to integrate. Our technology takes the best features of Flash and CSS. What does it really mean to syndicate 'magnetically'?" />
     </div>
   );
 }
