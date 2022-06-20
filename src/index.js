@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './components/App';
 import LocationDashboard from './components/LocationDashboard';
 import Projects from './components/Projects';
-import Sometimes from './components/Sometimes';
 import UserDashboard from './components/UserDashboard';
 import UserForm from './components/UserForm';
 import UserList from './components/UserList';

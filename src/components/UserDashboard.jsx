@@ -1,8 +1,6 @@
 import React from 'react'
 import "../css/nav.css"
 import { Link, Outlet } from 'react-router-dom';
-import UserForm from './UserForm';
-import UserList from './UserList';
 
 const UserDashboard = () => {
   return (
